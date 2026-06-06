@@ -65,6 +65,10 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 
 	const forceColor = sniffFlags ? flagForceColor : noFlagForceColor;
 
+	if (noFlagForceColor !== undefined) {
+		return noFlagForceColor;
+	}
+
 	if (forceColor === 0) {
 		return 0;
 	}
